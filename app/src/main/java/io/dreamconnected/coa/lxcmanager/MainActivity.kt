@@ -1,7 +1,7 @@
 package io.dreamconnected.coa.lxcmanager
 
 import android.os.Bundle
-import android.util.AttributeSet
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.navigation.fragment.NavHostFragment

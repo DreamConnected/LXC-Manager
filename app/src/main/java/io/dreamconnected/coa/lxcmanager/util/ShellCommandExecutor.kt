@@ -6,6 +6,7 @@ import android.os.Looper
 import android.util.Log
 import com.topjohnwu.superuser.Shell
 import io.dreamconnected.coa.lxcmanager.R
+import kotlin.system.exitProcess
 
 object ShellCommandExecutor {
 
@@ -26,6 +27,15 @@ object ShellCommandExecutor {
             Shell.Builder.create()
                 .setFlags(Shell.FLAG_REDIRECT_STDERR)
         )
+        Shell.isAppGrantedRoot()?.let {
+            if (!it) ScreenMask(context).showDebugDialog(
+                context,
+                context.resources.getString(R.string.root_grant_req),
+                context.resources.getString(R.string.root_grant_err_no_su),
+                onConfirm = {
+                    exitProcess(0)
+                })
+        }
     }
 
     private fun buildEnvironmentCommands(): List<String> {

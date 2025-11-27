@@ -85,7 +85,6 @@ class SyncContainerStatus(
             var resumed = false
             ShellCommandExecutor.execCommand(
                 "lxc-info $name -H | awk \"/State/ {state=\\$2} /CPU use/ {cpu=\\$3} /Memory use/ {memory=\\$3} END {print state \",\" cpu \",\" memory}\"",
-                1,
                 object : ShellCommandExecutor.CommandOutputListener {
                     @SuppressLint("DefaultLocale")
                     override fun onOutput(output: String?) {
