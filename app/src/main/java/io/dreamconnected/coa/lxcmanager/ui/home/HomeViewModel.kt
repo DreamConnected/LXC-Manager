@@ -11,14 +11,6 @@ class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         val currentText = StringBuilder()
-//        shellClient.execCommand("lxc-checkconfig", 5, object : ShellClient.CommandOutputListener {
-//            override fun onOutput(output: String?) {
-//                currentText.append(output).append("\n")
-//                value = currentText.toString()
-//            }
-//            override fun onCommandComplete(code: String?) {
-//            }
-//        })
     }
     val text: LiveData<String> = _text
 }

@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.mpandroidchart)
     implementation(libs.dev.material.preference)
+    implementation(libs.libsu.core)
 
     implementation(project(":ReTerminal:application"))
     implementation(project(":ReTerminal:components"))
