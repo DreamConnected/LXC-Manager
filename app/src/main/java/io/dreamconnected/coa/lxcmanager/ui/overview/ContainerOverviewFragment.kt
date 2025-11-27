@@ -230,8 +230,7 @@ class ContainerOverviewFragment : BaseFragment(), MenuProvider {
 
     fun onNewData(newValue1: Float, newValue2: Float, lineChart2: LineChart) {
         LxcNetworkChartManager.addEntry(newValue1, newValue2)
-        val lineData = LxcNetworkChartManager.initDoubleLineChart(lineChart2)
-        LxcNetworkChartManager.initDataStyle(lineChart2, lineData)
+        LxcNetworkChartManager.updateChartData(lineChart2)
     }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
